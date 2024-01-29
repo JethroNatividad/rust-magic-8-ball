@@ -7,10 +7,14 @@ use rand::seq::SliceRandom;
 
 fn get_random_answer(answers: Vec<&str>) -> &str {
     // Choose using rand
-    let answer: &str = answers.choose(&mut rand::thread_rng());
+    let result: Option<&&str> = answers.choose(&mut rand::thread_rng());
     // return answer
-    answer
+    match result {
+        Some(answer) => return *answer,
+        None => return "No answer!",
+    }
 }
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -18,7 +22,8 @@ mod tests {
     #[test]
     fn test_get_random_answer() {
         let answers: Vec<&str> = vec!["Yes", "No", "Maybe", "Ask again later."];
-        assert!(answers.contains(get_random_answer(answers)));
+        let answer: &str = get_random_answer(answers.clone());
+        assert!(answers.contains(&answer));
     }
 }
 fn main() {
