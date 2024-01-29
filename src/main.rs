@@ -18,5 +18,7 @@ mod tests {
     }
 }
 fn main() {
-    //
+    // ask a question.
+    // generate random answer
+    // print random answer
 }
