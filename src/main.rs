@@ -20,6 +20,7 @@ fn get_random_answer(answers: Vec<&str>) -> &str {
 fn valid_question(question: &str) -> bool {
     // remove whitespace
     // check last char if equal to ?
+    question.trim_end().ends_with("?")
 }
 
 #[cfg(test)]
@@ -35,10 +36,10 @@ mod tests {
 
     #[test]
     fn test_valid_question() {
-        assert_eq!(valid_question("Will it rain today?", true));
-        assert_eq!(valid_question("Am I lucky today?", true));
-        assert_eq!(valid_question("Hello", false));
-        assert_eq!(valid_question("asfasff", false));
+        assert_eq!(valid_question("Will it rain today?"), true);
+        assert_eq!(valid_question("Am I lucky today?"), true);
+        assert_eq!(valid_question("Hello"), false);
+        assert_eq!(valid_question("asfasff"), false);
     }
 }
 
