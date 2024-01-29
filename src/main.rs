@@ -17,6 +17,31 @@ fn get_random_answer(answers: Vec<&str>) -> &str {
     }
 }
 
+fn valid_question(question: &str) -> bool {
+    // remove whitespace
+    // check last char if equal to ?
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_get_random_answer() {
+        let answers: Vec<&str> = vec!["Yes", "No", "Maybe", "Ask again later."];
+        let answer: &str = get_random_answer(answers.clone());
+        assert!(answers.contains(&answer));
+    }
+
+    #[test]
+    fn test_valid_question() {
+        assert_eq!(valid_question("Will it rain today?", true));
+        assert_eq!(valid_question("Am I lucky today?", true));
+        assert_eq!(valid_question("Hello", false));
+        assert_eq!(valid_question("asfasff", false));
+    }
+}
+
 fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
     loop {
         print!("{}", prompt);
@@ -34,22 +59,6 @@ fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
     }
 }
 
-fn valid_question(question: &str) -> bool {
-    // remove whitespace
-    // check last char if equal to ?
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_get_random_answer() {
-        let answers: Vec<&str> = vec!["Yes", "No", "Maybe", "Ask again later."];
-        let answer: &str = get_random_answer(answers.clone());
-        assert!(answers.contains(&answer));
-    }
-}
 fn main() {
     // ask a question.
     // check if valid question, reask if not.
