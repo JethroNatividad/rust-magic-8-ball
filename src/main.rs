@@ -70,6 +70,7 @@ fn ask_question() {
     }
 }
 
+// TODO: Validate the question is answerable by Yes and No.
 fn main() {
     // ask a question.
     ask_question();
