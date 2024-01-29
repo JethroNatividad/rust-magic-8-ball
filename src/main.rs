@@ -73,7 +73,8 @@ fn ask_question() {
 fn main() {
     // ask a question.
     ask_question();
-    // check if valid question, reask if not.
     // generate random answer
+    let answer: &str = get_random_answer(vec!["Yes", "No", "Maybe", "Ask again later."]);
     // print random answer
+    println!("{}", answer);
 }
