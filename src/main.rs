@@ -1,4 +1,6 @@
 use rand::seq::SliceRandom;
+use std::io;
+use std::io::Write;
 
 // A program that asks for a question, and outputs one of these randomly “Yes,” “No,” “Maybe,” or “Ask again later.”
 // Inputs: Question
