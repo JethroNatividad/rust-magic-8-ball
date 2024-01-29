@@ -60,8 +60,19 @@ fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
     }
 }
 
+fn ask_question() {
+    loop {
+        let question: String = get_input("What's your question? ");
+        match valid_question(question) {
+            true => break,
+            false => println!("That's not a question, Please try again."),
+        }
+    }
+}
+
 fn main() {
     // ask a question.
+    ask_question();
     // check if valid question, reask if not.
     // generate random answer
     // print random answer
