@@ -33,6 +33,12 @@ fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
         }
     }
 }
+
+fn valid_question(question: &str) -> bool {
+    // remove whitespace
+    // check last char if equal to ?
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
