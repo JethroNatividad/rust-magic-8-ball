@@ -52,6 +52,7 @@ mod tests {
 }
 fn main() {
     // ask a question.
+    // check if valid question, reask if not.
     // generate random answer
     // print random answer
 }
