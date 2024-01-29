@@ -25,7 +25,7 @@ fn valid_question(question: &str) -> bool {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::{get_random_answer, valid_question};
 
     #[test]
     fn test_get_random_answer() {
