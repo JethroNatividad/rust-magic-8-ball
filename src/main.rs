@@ -63,7 +63,7 @@ fn get_input<T: std::str::FromStr>(prompt: &str) -> T {
 fn ask_question() {
     loop {
         let question: String = get_input("What's your question? ");
-        match valid_question(question) {
+        match valid_question(&question) {
             true => break,
             false => println!("That's not a question, Please try again."),
         }
