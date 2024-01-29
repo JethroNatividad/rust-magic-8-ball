@@ -5,7 +5,7 @@ use rand::seq::SliceRandom;
 // Process: Select from "Yes", "No", "Maybe", "Ask again later." randomly
 // Output: "Yes", "No", "Maybe", or "Ask again later."
 
-fn get_random_answer(answers: Vector<&str>) -> &str {
+fn get_random_answer(answers: Vec<&str>) -> &str {
     // Choose using rand
     let answer: &str = answers.choose(&mut rand::thread_rng());
     // return answer
@@ -17,7 +17,7 @@ mod tests {
 
     #[test]
     fn test_get_random_answer() {
-        let answers: Vector<&str> = vec!["Yes", "No", "Maybe", "Ask again later."];
+        let answers: Vec<&str> = vec!["Yes", "No", "Maybe", "Ask again later."];
         assert!(answers.contains(get_random_answer(answers)));
     }
 }
