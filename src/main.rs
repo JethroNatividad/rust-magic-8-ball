@@ -3,6 +3,10 @@
 // Process: Select from "Yes", "No", "Maybe", "Ask again later." randomly
 // Output: "Yes", "No", "Maybe", or "Ask again later."
 
+fn get_random_answer(answers: Vector<&str>) -> &str {
+    // Choose using rand
+    // return answer
+}
 #[cfg(test)]
 mod tests {
     use super::*;
